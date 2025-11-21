@@ -1,0 +1,40 @@
+
+
+| JOIN novu       | Tesviri                           | Numune SQL kodu                                   |
+| --------------- | --------------------------------- | ------------------------------------------------- |
+| INNER JOIN      | Her iki cedvelde uygun setirler   | `SELECT * FROM A INNER JOIN B ON A.Id = B.AId`    |
+| LEFT JOIN       | Sol cedveldeki butun setirler     | `SELECT * FROM A LEFT JOIN B ON A.Id = B.AId`     |
+| RIGHT JOIN      | Sag cedveldeki butun setirler     | `SELECT * FROM A RIGHT JOIN B ON A.Id = B.AId`    |
+| FULL OUTER JOIN | Her iki cedveldeki butun setirler | `SELECT * FROM A FULL JOIN B ON A.Id = B.AId`     |
+| CROSS JOIN      | Butun kombinasiya setirleri       | `SELECT * FROM A CROSS JOIN B`                    |
+| SELF JOIN       | Cedveli oz-ozune join edir        | `SELECT * FROM A a JOIN A b ON a.Id = b.ParentId` |
+
+---
+
+| ON DELETE novu | Tesviri                    | Misal / Izah                              |
+| -------------- | -------------------------- | ----------------------------------------- |
+| CASCADE        | Parent silinse ushaqlar da | `<FOREIGN KEY ... ON DELETE CASCADE>`     |
+| SET NULL       | Parent silinse FK NULL     | `<FOREIGN KEY ... ON DELETE SET NULL>`    |
+| RESTRICT       | Silmek mumkun deyil        | `<FOREIGN KEY ... ON DELETE RESTRICT>`    |
+| NO ACTION      | Eyni, error verir          | `<FOREIGN KEY ... ON DELETE NO ACTION>`   |
+| SET DEFAULT    | FK default deyere gedir    | `<FOREIGN KEY ... ON DELETE SET DEFAULT>` |
+
+---
+
+| Tip | Tesviri             | Misal / Emrler                  |
+| --- | ------------------- | ------------------------------- |
+| DDL | Struktur            | `CREATE, ALTER, DROP, TRUNCATE` |
+| DML | Data deyisir        | `INSERT, UPDATE, DELETE, MERGE` |
+| DQL | Data oxuyur         | `SELECT`                        |
+| DCL | Icaze verir         | `GRANT, REVOKE`                 |
+| TCL | Transaction idaresi | `COMMIT, ROLLBACK, SAVEPOINT`   |
+
+---
+
+| Nezer noqtesi | Tesviri                                      | Misal / Izah                         |
+| ------------- | -------------------------------------------- | ------------------------------------ |
+| 1NF           | Tek deyer atomik, tekrar sutun yoxdur        | `Phone1, Phone2, Phone3` olmamalidir |
+| 2NF           | Redundancy azaldilir, partial dependency yox | `(StudentId, LessonId)` primary key  |
+| 3NF           | Transitiv asiliq aradan qaldirilir           | `CategoryName` ayri Category table   |
+
+
